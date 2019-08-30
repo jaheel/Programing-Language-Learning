@@ -137,3 +137,105 @@ dynamic类型，被编译后为object类型，（编译器对dynamic类型进行
 
 **始终用dynamic优化反射实现**
 
+
+
+### 建议16：元素数量可变的情况下不应使用数组
+
+```
+int [] iArr={0,1,2,3,4,5,6};
+ArrayList arrayListInt=ArrayList.Adapter(iArr);//将数组转变为ArrayList
+arrayListInt.Add(7);
+List<int> listInt=iArr.ToList<int>();//将数组转变为List<T>
+listInt.Add(7);
+```
+
+
+
+### 建议17：多数情况下使用foreach进行循环遍历
+
+### 建议18：foreach不能代替for
+
+foreach(迭代器)（不支持集合增删操作）
+
+for(索引器)
+
+### 建议19：使用更有效的对象和集合初始化
+
+对象初始化：
+
+```
+class Program
+{
+  static void Main(string[] args)
+  {
+     Person person=new Person(){Name="Mike",Age=20};
+  }
+}
+
+class Person
+{
+   public string Name{get;set;}
+   public int Age{get;set;}
+}
+```
+
+集合初始化：
+
+```
+List<Person> personList=new List<Person>()
+{
+   new Person() {Name="Rose",Age=19},
+   mike,null
+};
+```
+
+### 建议20：使用泛型集合代替非泛型集合
+
+例如：
+
+```
+List<int> intList=new List<int>();
+intList.Add(1);
+intList.Add(2);
+foreach(var item int intList)
+{
+   Console.WriteLine(item.ToString());
+}
+```
+
+### 建议21：选择正确的集合
+
+如果集合的数目固定且不涉及转型，使用数组效率高，否则就使用List<T>。
+
+### 建议22：确保集合的线程安全
+
+**多个线程上添加或删除元素时，线程之间必须保持同步**
+
+通过加锁实现线程的互斥运行
+
+### 建议23：避免将List\<T>作为自定义集合类的基类
+
+​        需扩展的泛型接口通常是IEnumerable<T>和ICollection<T>，前者规范了集合类的迭代功能，后者规范了一个集合通常会有的操作。
+
+### 建议24： 迭代器应该是只读的
+
+### 建议25：谨慎集合属性的可写操作
+
+### 建议26：使用匿名类型存储LINQ查询结果
+
+匿名类型特性：
+
+> 既支持简单类型也支持复杂类型
+>
+> > 简单类型必须是一个非空初始值，复杂类型则是一个以new开头的初始化项
+
+> 只读属性，没有属性设置器，一旦被初始化不可更改
+
+> 如果两个匿名类型的属性值相同，那么就认为两个匿名类型相等
+
+> 匿名类型可以在循环中用作初始化器
+
+> 匿名类型支持智能感知
+
+### 建议27：在查询中使用Lambda表达式
+
