@@ -1,5 +1,7 @@
 # C#高质量编程学习总结
 
+## 第1章 基本语言要素
+
 ### 建议1：正确操作字符串
 
 ```
@@ -139,6 +141,8 @@ dynamic类型，被编译后为object类型，（编译器对dynamic类型进行
 
 
 
+## 第2章 集合和LINQ
+
 ### 建议16：元素数量可变的情况下不应使用数组
 
 ```
@@ -239,3 +243,111 @@ foreach(var item int intList)
 
 ### 建议27：在查询中使用Lambda表达式
 
+### 建议28：理解延迟求值和主动求值之间的区别
+
+延迟求值（lazy evaluation)、主动求值(eager evaluation)
+
+```
+List<int> list = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            var temp1 = from c in list where c > 5 select c;
+            var temp2 = (from c in list where c > 5 select c).ToList<int>();
+            list[0] = 11;
+            Console.Write("temp1: ");
+            foreach (var item in temp1)
+            {
+                Console.Write(item.ToString() + " ");
+            }
+            Console.Write("\ntemp2: ");
+            foreach (var item in temp2)
+            {
+                Console.Write(item.ToString() + " ");
+            }
+            
+            结果：
+            temp1: 11 6 7 8 9
+            temp2: 6 7 8 9
+```
+
+*查询调用ToList、ToArray等方法，将会使其立即执行*
+
+### 建议29：区别LINQ查询中的IEnumerable\<T>和IQueryable\<T>
+
+​       本地数据源用IEnumerable\<T>，远程数据源用IQueryable\<T>
+
+​        IEnumerable\<T>查询的逻辑可以直接用我们所定义的方法，而IQueryable\<T>则不能使用自定义的方法，它必须先生成表达式树，查询由LINQ to SQL引擎处理。
+
+### 建议30：使用LINQ取代集合中的比较器和迭代器
+
+```
+List<Salary> companySalary = new List<Salary>()
+                {
+                    new Salary() { Name = "Mike", BaseSalary = 3000, Bonus = 1000 },
+                    new Salary() { Name = "Rose", BaseSalary = 2000, Bonus = 4000 },
+                    new Salary() { Name = "Jeffry", BaseSalary = 1000, Bonus = 6000 },
+                    new Salary() { Name = "Steve", BaseSalary = 4000, Bonus = 3000 }
+                };
+            Console.WriteLine("默认排序：");
+            foreach (Salary item in companySalary)
+            {
+                Console.WriteLine(string.Format("Name:{0} \tBaseSalary:{1} \tBonus:{2}", item.Name, item.BaseSalary, item.Bonus));
+            }
+            Console.WriteLine("BaseSalary排序：");
+            var orderByBaseSalary = from s in companySalary orderby s.BaseSalary select s;
+            foreach (Salary item in orderByBaseSalary)
+            {
+                Console.WriteLine(string.Format("Name:{0} \tBaseSalary:{1} \tBonus:{2}", item.Name, item.BaseSalary, item.Bonus));
+            }
+            Console.WriteLine("Bonus排序：");
+            var orderByBonus = from s in companySalary orderby s.Bonus select s;
+            foreach (Salary item in orderByBonus)
+            {
+                Console.WriteLine(string.Format("Name:{0} \tBaseSalary:{1} \tBonus:{2}", item.Name, item.BaseSalary, item.Bonus));
+            }
+```
+
+*LINQ功能的实现本身就是借助于FCL泛型集合的比较器、迭代器、索引器的，LINQ相当于封装了这些功能，让我们使用起来更加方便*
+
+### 建议31：在LINQ查询中避免不必要的迭代
+
+```
+ 
+ List<Person> list = new List<Person>()
+            {
+                new Person(){ Name = "Mike", Age = 20 },
+                new Person(){ Name = "Mike", Age = 30 },
+                new Person(){ Name = "Rose", Age = 25 },
+                new Person(){ Name = "Steve", Age = 30 },
+                new Person(){ Name = "Jessica", Age = 20 }
+            };
+ 
+ 
+ MyList list = new MyList();
+            var temp = (from c in list where c.Age == 20 select c).ToList();
+            Console.WriteLine(list.IteratedNum.ToString());
+            list.IteratedNum = 0;
+            var temp2 = (from c in list where c.Age >= 20 select c).First();
+            Console.WriteLine(list.IteratedNum.ToString());
+       
+       代码输出为：
+       5
+       1
+```
+
+第二次查询仅仅迭代1次是因为20正好放在List的首位。First方法实际完成的工作是：搜索到满足条件的第一个元素，就从集合中返回。如果没有符合条件的元素，它也会遍历整个集合。
+
+```
+MyList list = new MyList();
+            var temp = (from c in list select c).Take(2).ToList();
+            Console.WriteLine(list.IteratedNum.ToString());
+            list.IteratedNum = 0;
+            var temp2 = (from c in list where c.Name == "Mike" select c).ToList();
+            Console.WriteLine(list.IteratedNum.ToString());
+            
+          代码输出为：
+          2
+          5
+```
+
+Take方法接收一个整型参数，然后为我们返回该参数指定的元素个数。与First一样，满足条件后，会从当前的迭代过程中直接返回。
+
+**使用First和Take方法，能给应用带来高效性，避免无效迭代**
