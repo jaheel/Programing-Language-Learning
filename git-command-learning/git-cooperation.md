@@ -207,5 +207,79 @@ git push --delete my_gitlab 1-process_notes
 
 
 
+## 5 回滚、还原、 重置和变基
 
+### 5.1 撤销
+
+| To do                                                        | Note                                                     | Solution                    |
+| ------------------------------------------------------------ | -------------------------------------------------------- | --------------------------- |
+| 舍弃工作目录中对一个文件的修改                               | 修改的文件未被暂存或提交                                 | checkout --filename         |
+| 舍弃工作目录中所有未保存的变更                               | 文件已暂存，但未被提交                                   | reset --hard                |
+| 合并与某个特定提交（但不含）之间的多个提交                   |                                                          | reset commit                |
+| 移除所有未保存的变更，包含未跟踪的文件                       | 修改的文件未被提交                                       | clean -fd                   |
+| 移除所有已暂存的变更和在某个提交之前提交的工作，但不溢出工作目录中的新文件 |                                                          | reset --hard commit         |
+| 移除之前的工作，但完整保留提交历史纪录（”前进时回滚“）       | 分支已经被发布、工作目录是干净的                         | revert commit               |
+| 从分支历史纪录中移除一个单独的提交                           | 修改的文件已经被提交，工作目录是干净的，分支尚未进行发布 | rebase --interactive commit |
+| 保留之前的工作，但与另一提交合并                             | 选择squash（压缩）选项                                   | rebase --interactive commit |
+
+### 5.2 分支
+
+![FileAlter](FileAlter.png)
+
+![BranchMerge](BranchMerge.png)
+
+#### 5.2.1 用分支来测试修改
+
+```git
+git checkout -b experimental_idea
+git add --all
+git commit
+//使用--squash参数合并，可将所有提交并入一个提交，以后无法撤销分支
+
+```
+
+#### 5.2.2 将分支并入主分支
+
+```git
+git checkout master
+git merge experimental_idea --squash
+git commit
+```
+
+#### 5.2.3 删除分支
+
+```git
+git branch --delete experimental_idea
+```
+
+### 5.3 分布变基
+
+#### 5.3.1 开始变基
+
+```git
+git checkout master
+git pull --rebase=preserve remote_nickname master
+//确保父分支的本地副本与项目主仓库中最新的提交同步
+
+git checkout feature
+//当前分支上的修改与主项目不同步，而主项目中的新工作尚未被引入
+
+git rebase master
+//开始变基过程
+```
+
+#### 5.3.2 文件删除造成的变基中冲突
+
+```git
+git reset HEAD filename
+//清楚暂存区，将指针回退到最新的一个已知的提交
+```
+
+#### 5.3.3 单个文件合并冲突造成的变基中冲突
+
+## 5.4 还原提交
+
+```git
+git revert c545620	
+```
 
