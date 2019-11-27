@@ -67,7 +67,7 @@ IT相关学习笔记
 * [Unity2D](/Unity2D-Learning)
 * [Effector2D](/Unity2D-Learning/Effector2D)
 * [Joint2D](/Unity2D-Learning/Joint2D)
-* [Particle System](/Unity2D-Learning/Particle System)
+* [ParticleSystem](/Unity2D-Learning/ParticleSystem)
 * [Time类](/Unity2D-Learning/Time类)
 * [返回目录](#目录)
 
