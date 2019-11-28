@@ -58,8 +58,8 @@ IT相关学习笔记
 
 ## LeetCode
 
-* [#1_Two_Sum](LeetCode/#1_Two_Sum.md)
-* [#2_Add_Two_Numbers](LeetCode/#2_Add_Two_Numbers.md)
+* [#1_Two_Sum](LeetCode/1_Two_Sum.md)
+* [#2_Add_Two_Numbers](LeetCode/2_Add_Two_Numbers.md)
 * [返回目录](#目录)
 
 ## Unity2D
