@@ -23,6 +23,7 @@ IT相关学习笔记
 * [MachineLearning](/Algorithm/MachineLearning)
 * [NaiveBayes](/Algorithm/NaiveBayes)
 * [SVM](/Algorithm/SVM)
+* [PCA](/Algorithm/PCA)
 
 ## Pattern
 
