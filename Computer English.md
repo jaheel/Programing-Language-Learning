@@ -66,7 +66,14 @@ handheld computer 手持式计算机，掌上电脑
 
 Web site 网站，站点
 
+compact disc 光盘
 
+floppy disk 软盘
+
+rigid disk 硬盘
+
+address bus 地址总线
+data bus 数据总线
 
 
 
@@ -79,4 +86,20 @@ AI: artificial intelligence 人工智能
 NN: neural network 神经网络
 
 VR: virtual reality 虚拟现实
+
+
+
+BIOS : Basic Input/Output System
+
+CRT : Cathode Ray Tube 阴极射线管
+
+LCD : Liquid Crystal Display 液晶显示器
+
+RAM : Random-access Memory 随机存储器
+
+ROM : Read-only Memory 只读存储器
+
+
+
+
 
