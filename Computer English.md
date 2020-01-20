@@ -152,6 +152,18 @@ cost effectiveness 成本效益
 
 
 
+waterfall model 瀑布模型
+
+black box testing 黑盒测试
+
+white box testing 白盒测试
+
+regression test 回归测试
+
+exercising test 压力测试
+
+
+
 ## 2 简称
 
 CPU: Central Processing Unit 中央处理器
@@ -199,6 +211,20 @@ WWW : World Wide Web 互联网
 ISO : International Organization for Standardization
 
 ANSI : American National Standards Institute
+
+CBSE : Component-based software engineering 基于组件的软件工程
+
+
+
+DBMS : database management system 数据库管理系统
+
+DBAs : database administrators 数据库管理员
+
+RDBMS : relational database management system 关系数据库管理系统
+
+ERM : entity-relationship model 实体关系模型
+
+
 
 
 
