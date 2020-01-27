@@ -164,6 +164,12 @@ exercising test 压力测试
 
 
 
+data mining 数据挖掘
+
+coaxial cable 同轴电缆
+
+
+
 ## 2 简称
 
 CPU: Central Processing Unit 中央处理器
@@ -225,6 +231,16 @@ RDBMS : relational database management system 关系数据库管理系统
 ERM : entity-relationship model 实体关系模型
 
 
+
+LAN : local area network 
+
+MAN : metropolitan area network
+
+WAN : wide area network
+
+
+
+CSMA/CD : Carrier Sense Multiple Access with Collision Detection  带有冲突检测的载波侦听多路访问协议
 
 
 
