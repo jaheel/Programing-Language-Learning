@@ -8,7 +8,7 @@ computer science 计算机科学
 
 overview 概述
 
-automation 自动化
+automation 自动化 
 
 compile v. 汇编，编译
 
@@ -170,6 +170,40 @@ coaxial cable 同轴电缆
 
 
 
+dotted decimal notation 点分十进制记数法
+
+
+
+cloud computing 云计算
+
+trust delegation 信任委托
+
+data coloring 数据着色
+
+
+
+antivirus software 杀毒软件
+
+malicious software 恶意软件
+
+maintenance hook 维护陷阱
+
+
+
+word processor 文字处理软件
+
+spreadsheet program 电子数据表程序
+
+presentation software 演示软件
+
+
+
+electronic commerce 电子商务
+
+
+
+
+
 ## 2 简称
 
 CPU: Central Processing Unit 中央处理器
@@ -243,4 +277,34 @@ WAN : wide area network
 CSMA/CD : Carrier Sense Multiple Access with Collision Detection  带有冲突检测的载波侦听多路访问协议
 
 
+
+TLD : top-level domain 顶级域名
+
+DNS : domain name system 域名系统
+
+
+
+SaaS : Software as a Service 软件即服务
+
+IT : information technology 信息技术
+
+GAE : Google App Engine 谷歌应用引擎
+
+AWS : Amazon Web Services 亚马逊网络服务
+
+
+
+IoT : The Internet of Things 物联网
+
+RFID : radio-frequency identification 
+
+CIA : confidentiality, integrity, and availability 机密性、完整性、可用性
+
+
+
+gif : Graphics Interchange Format 图形交换格式
+
+
+
+SSL : Seure Sockets Layer 安全套接层
 
