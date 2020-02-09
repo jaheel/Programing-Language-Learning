@@ -15,6 +15,8 @@ IT相关学习笔记
   * [LeetCode](#LeetCode)
   * [Unity2D](#Unity2D)
   * [XAML](#XAML)
+  * [Python](#Python)
+  * [babun](#babun)
 
 
 
@@ -77,4 +79,14 @@ IT相关学习笔记
 ## XAML
 
 * [XAML](/XAML)
+* [返回目录](#目录)
+
+## Python
+
+* [Python](/Python)
+* [返回目录](#目录)
+
+## babun
+
+* [babun](/babun)
 * [返回目录](#目录)
