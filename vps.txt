@@ -1,0 +1,25 @@
+https://www.baishitou.cn/1524.html
+
+server: vultr 【https://my.vultr.com/】
+
+获取ssr途径一：
+wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+途径二：
+wget -N --no-check-certificate https://cdn.qqiyu.cn/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+
+配置网址：https://blog.qqiyu.cn/62.html
+
+进入ssr命令：
+bash ssr.sh
+
+谷歌bbr加速：
+yum -y install wget
+
+wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
+
+chmod +x bbr.sh
+
+./bbr.sh
+
+检测bbr是否安装且启动成功：
+lsmod | grep bbr 
