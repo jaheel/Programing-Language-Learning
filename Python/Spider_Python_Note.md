@@ -62,4 +62,12 @@ https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/
 | lxml XML解析器  | BeautifulSoup(markup, "xml")         | 速度快、唯一支持XML的解析器                               |
 | html5lib        | BeautifulSoup(markup, "html5lib")    | 最好的容错性、以浏览器的方式解析文档、生成HTML5格式的文档 |
 
+## 3 Requests库
+
+## 4 Asyncio库
+
+## 5 aiohttp库
+
+
+
 https://morvanzhou.github.io/tutorials/data-manipulation/scraping/3-01-requests/
