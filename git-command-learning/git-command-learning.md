@@ -77,3 +77,4 @@
 　　git remote –v 查看远程库的详细信息
 
 　　git push origin master  Git会把master分支推送到远程库对应的远程分支上
+
