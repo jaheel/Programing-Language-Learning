@@ -97,3 +97,24 @@ python -i #在Babun中，需要加上-i参数，才能正常启动python
 
 
 
+## 4 babun配置git
+
+step:
+
+1. 生成ssh
+
+   ```bash
+   ssh-keygen -t rsa -C "xxx@xxx.com"
+   ```
+
+2. 将ssh添加到github中
+
+   > rsa文件位于 .babun/cygwin/home/username/.ssh
+
+3. 首次添加需要在babun中添加信任
+
+   ```bash
+   ssh -T username@github.com
+   ```
+
+4. 添加成功后即可使用
