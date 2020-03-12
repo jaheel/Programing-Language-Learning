@@ -12,12 +12,9 @@ IT相关学习笔记
   * [Software-Engineering](#Software-Engineering)
 * 语言相关类
   * [C#](#Csharp)
-  * [Git](#Git)
   * [Unity2D](#Unity2D)
   * [XAML](#XAML)
   * [Python](#Python)
-  * [babun](#babun)
-  * [Docker](#Docker)
 
 
 
@@ -56,10 +53,7 @@ IT相关学习笔记
 * [CsharpLearningNote](/Csharp-learningNote)
 * [返回目录](#目录)
 
-## Git
-
-* [git-command](/Git-Command-Learning)
-* [返回目录](#目录)
+* 
 
 ## Unity2D
 
@@ -79,16 +73,6 @@ IT相关学习笔记
 ## Python
 
 * [Python](/Python)
-* [返回目录](#目录)
-
-## babun
-
-* [babun](/babun)
-* [返回目录](#目录)
-
-## Docker
-
-* [Docker](/Docker)
 * [返回目录](#目录)
 
 ## Software-Engineering
