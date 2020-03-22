@@ -190,3 +190,13 @@ these operators are used to order the elements of a sequence based on one or mor
 
 
 
+## 4 强引用和弱引用区别
+
+强引用：维持着对象的可访问性，禁止垃圾回收器清除对象所占用的内存
+
+弱引用：不禁止对对象进行垃圾回收，但会维持一个引用。如果对象尚未被垃圾回收器清除，就可以重用。
+
+> 弱引用为创建起来代价较高（开销很大），而且维护开销特别大的对象设计。
+
+如果认为对象（或对象集合）应该进行弱引用，就把它赋给System.WeakReference
+
