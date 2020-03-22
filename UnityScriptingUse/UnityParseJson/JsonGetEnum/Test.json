@@ -1,0 +1,78 @@
+{
+    "items":[
+        {
+            "id": 1,
+            "name": "经典血瓶",
+            "type": "ConsumableItem",
+            "quality": "Common",
+            "description": "这是用来加血的",
+            "capacity": 20,
+            "buyPrice": 10,
+            "sellPrice": 5,
+            "hp": 10,
+            "mp": 0,
+            "sprite": "Sprites/Items/hp"
+        },
+        {
+            "id": 2,
+            "name": "经典蓝瓶",
+            "type": "ConsumableItem",
+            "quality": "Common",
+            "description": "这是用来加蓝的",
+            "capacity": 20,
+            "buyPrice": 10,
+            "sellPrice": 5,
+            "hp": 0,
+            "mp": 10,
+            "sprite": "Sprites/Items/mp"
+        },
+        {
+            "id": 3,
+            "name": "胸甲",
+            "type": "EquipmentItem",
+            "quality": "Rare",
+            "description": "这是用来增加防御力之类的",
+            "capacity": 20,
+            "buyPrice": 20,
+            "sellPrice": 10,
+            "sprite": "Sprites/Items/armor",
+            "strength": 20,
+            "intellect": 10,
+            "agility": 10,
+            "stamina": 10,
+            "equipType": "Chest"
+        },
+        {
+            "id": 4,
+            "name": "经典款工具背包",
+            "type": "EquipmentItem",
+            "quality": "Epic",
+            "description": "这个背包好沉啊，肯定值钱",
+            "capacity": 20,
+            "buyPrice": 25,
+            "sellPrice": 15,
+            "sprite": "Sprites/Items/bag",
+            "strength": 25,
+            "intellect": 20,
+            "agility": 10,
+            "stamina": 5,
+            "equipType": "Shoulder"
+        },
+        {
+            "id": 5,
+            "name": "大力皮腰带",
+            "type": "EquipmentItem",
+            "quality": "Uncommon",
+            "description": "这个腰带真特么带劲",
+            "capacity": 10,
+            "buyPrice": 25,
+            "sellPrice": 15,
+            "sprite": "Sprites/Items/belts",
+            "strength": 25,
+            "intellect": 10,
+            "agility": 10,
+            "stamina": 10,
+            "equipType": "Belt"
+        }
+    ]
+}
