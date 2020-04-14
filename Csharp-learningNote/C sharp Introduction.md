@@ -87,3 +87,87 @@ public、protected、internal、protected internal、private
 
 > 只允许在abstract类中使用，必须在所有非抽象派生类中重写抽象方法
 
+## 5 备注
+
+### 5.1 using用法
+
+1. 作为指令
+
+   > 为命名空间创建别名或导入其他命名空间中定义的类型
+   >
+   > * 使用类型
+   >
+   >   ```c#
+   >   using System.Text;
+   >   using PC.Company;
+   >   ```
+   >
+   > * 创建别名
+   >
+   >   ```c#
+   >   using MyCompany=PC.Company;
+   >   using Project=PC.Company.Project;
+   >   ```
+   >
+   >   
+
+2. 作为语句
+
+   > 用于定义一个范围，在此范围的末尾将释放对象
+   >
+   > * 在using语句之中声明对象
+   >
+   >   ```c#
+   >   Font font2 = new Font("Arial", 10.0f);
+   >   　　    using (font2)
+   >   　　    {
+   >   　　        // use font2
+   >   　　    }
+   >   ```
+   >
+   > * 在using语句之前声明对象
+   >
+   >   ```c#
+   >    using (Font font2 = new Font("Arial", 10.0f))
+   >   　　    {
+   >   　　        // use font2
+   >   　　    }
+   >   ```
+   >
+   > * 多个对象，必须在using语句内部声明
+   >
+   >   ```c#
+   >   using (Font font3=new Font("Arial",10.0f), font4=new Font("Arial",10.0f))
+   >   　　    {
+   >   　　        // Use font3 and font4.
+   >   　　    }
+   >   ```
+
+
+
+PS:
+
+1. 只能用于实现了IDisposable接口的类型，禁止为不支持IDisposable接口的类型使用using语句，否则出现编译错误
+
+2. 适用于清理单个非托管资源的情况，而多个非托管对象的清理最好用try-finally来实现
+
+   > 内层using块引发异常时，将不能释放外层using块的对象资源
+
+
+
+using本质：
+
+​		程序编译阶段，编译器会自动将using语句生成为try-finally语句，并在finally块中调用对象的Dispose方法，来清理资源。
+
+```c#
+ Font f2 = new Font("Arial", 10, FontStyle.Bold);
+　　try
+　　{
+　　    //执行文本绘制操作
+　　}
+　　finally
+　　{
+　　    if (f2 != null) ((IDisposable)f2).Dispose();
+　　}
+```
+
